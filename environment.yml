@@ -1,0 +1,10 @@
+name: thetis_mrv
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - typing
+  - fastapi
+  - pandas
+  - uvicorn
+prefix: /usr/local/anaconda3/envs/thetis_mrv_api
