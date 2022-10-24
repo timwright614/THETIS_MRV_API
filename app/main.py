@@ -9,7 +9,18 @@ mrv_df = pd.read_pickle("data/mrv_df.pkl")
 
 @app.get("/")
 async def root():
-    return {"message": "Hello World"}
+    return {"message": """Welcome to Tim's Thetis MRV API.
+
+            Please use a post request to the '/get_vessels' endpoint in the form
+            of a list of vessel IMOs that you would like data on, converted to a
+            string for parsing.
+
+            The response will have two keys 'data' and 'missing', the latter
+            representing listed values not matched in the database. It is
+            suggest that the value assigned to the data key is parsed using
+            pandas.read_json() function, such as:
+
+            pd.read_json(response.json()["data"]) """}
 
 
 @app.post("/get_vessels")
